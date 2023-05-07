@@ -1,19 +1,19 @@
 import "./ExpenseItem.css";
+import Card from "./Card"
+import ExpenseDate from "./ExpenseDate"
+import ExpenseTitle from "./ExpenseTitle"
+import ExpenseAmount from "./ExpenseAmount"
 
 function ExpenseItem(props){
-    // const expenseDate = new Date(2023,4,10);
-    // const expenseTitle="hotpot Eats";
-    // const expenseAmount=100;
     return (
-    <div>
-    <div className="expense-item">
-        {props.date.toISOString()}
-    </div>
-    <div className="">
-        <h2 className="expense-item__description">{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
-    </div>
-    </div>
+    <Card className="expense-item">
+        {/* {props.date.toISOString()} */}
+        <ExpenseDate date={props.date}/>
+        <div>
+            <ExpenseTitle title={props.title}/>
+            <ExpenseAmount amount={props.amount}/>
+        </div>
+    </Card>
     );
 }
 export default ExpenseItem;
